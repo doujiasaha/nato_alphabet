@@ -29,8 +29,17 @@ nato_dict = { data["letter"][i] : data["code"][i] for i in data["letter"] }
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
-user = input("Hello what is your name? ").upper()
-new_user = [nato_dict[x] for x in user]
+
+while True:
+    user = input("Hello what is your name? ").upper()
+    try:
+        new_user = [nato_dict[x] for x in user]
+
+    except KeyError:
+        print("That's not a letter. Try again.")
+    else:
+        break
+
 
 final_list = []
 
